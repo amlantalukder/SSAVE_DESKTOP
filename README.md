@@ -1,5 +1,5 @@
-# SSAVE 
-## Sleep Cycle and Spectrogram Analysis and Visualization from Electroencephalography data
+# SSAVE (Desktop Version)
+## Sleep Cycle and Spectrogram Analysis and Visualization for Electroencephalography data
 
 Author: Amlan Talukder
 
