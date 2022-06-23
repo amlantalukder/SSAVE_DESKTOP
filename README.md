@@ -11,9 +11,9 @@ INSTALLATION
 --------------------------------------------------------------------------------------------
    1. Install python 3.6 or higher
    2. Install the following python packages:
-        a) numpy
-        b) matplotlib
-        c) mne
+        * numpy
+        * matplotlib
+        * mne
 
 EXECUTION
 --------------------------------------------------------------------------------------------------------------------------------------
