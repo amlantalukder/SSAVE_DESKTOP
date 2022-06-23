@@ -1,6 +1,6 @@
 # SSAVE 
-**(Sleep Cycle and Spectrogram Analysis and Visualization from Electroencephalography data)**
---------------------------------------------------------------------------------------------
+## Sleep Cycle and Spectrogram Analysis and Visualization from Electroencephalography data)
+
 Author: Amlan Talukder
 
 Date: June 23, 2022
