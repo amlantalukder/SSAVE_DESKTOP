@@ -27,6 +27,6 @@ please contact Leping li (li3@niehs.nih.gov) for further information.
 CONTACT INFO
 -------------------------------------------------------------------------------------------------
 If any issues arise, please feel free to contact us:
-Amlan Talukder (amlan.talukder@nih.gov)
-Leping Li (li3@niehs.nih.gov)
-Yuanyuan Li (yuanyuan.li@nih.gov)
+* Amlan Talukder (amlan.talukder@nih.gov)
+* Leping Li (li3@niehs.nih.gov)
+* Yuanyuan Li (yuanyuan.li@nih.gov)
