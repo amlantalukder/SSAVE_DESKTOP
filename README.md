@@ -17,7 +17,7 @@ INSTALLATION
 
 EXECUTION
 --------------------------------------------------------------------------------------------------------------------------------------
-Execute "python3 app_desktop.py" in command prompt or terminal
+Execute `python3 app_desktop.py` in command prompt or terminal
 
 LICENSE & CREDITS
 -------------------------------------------------------------------------------------------------
