@@ -1,4 +1,4 @@
-# SSAVE
+# SSAVE (Sleep Cycle and Spectrogram Analysis and Visualization from Electroencephalography data)
 
 Author: Amlan Talukder
 
