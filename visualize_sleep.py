@@ -282,12 +282,10 @@ class SleepInfo:
         def getCutOptionsPerCycle(sleep_stage_durations, total_duration_non_w):
             cut_options = []
             index = 0
-            duration_non_w = 0
             for stage, duration in sleep_stage_durations:
-                if stage != Config.WAKE_STAGE: duration_non_w += duration
-                if ((stage == Config.WAKE_STAGE and duration > durationInEpoch(1)) or (stage == Config.N1_STAGE and duration > durationInEpoch(3))) and \
-                    ((stage == Config.WAKE_STAGE and duration_non_w > durationInEpoch(5) and (total_duration_non_w - duration_non_w) > durationInEpoch(5)) or \
-                        (stage == Config.N1_STAGE and (duration_non_w - duration) > durationInEpoch(5) and (total_duration_non_w - duration_non_w) > durationInEpoch(5))):
+                if (stage == Config.WAKE_STAGE and duration > durationInEpoch(1)):
+                    cut_options.append(index+duration+1)
+                if (stage == Config.N1_STAGE and duration > durationInEpoch(3)):
                     cut_options.append(index+1)
                 index += duration
             return cut_options
@@ -380,6 +378,9 @@ class SleepInfo:
                         break
                     count_next_w += 1
                 
+                # ----------------------------------------------------
+                # Mark wake stages longer than 5 minutes (10 epochs)
+                # ----------------------------------------------------
                 if count_next_w >= 10:
                     consecutive_epochs.append((current_cycle, count_sc))
                     count_sc, current_cycle = count_next_w, 'NA'
