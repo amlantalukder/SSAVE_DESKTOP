@@ -622,7 +622,7 @@ class MainDialog(Dialog):
     def __init__(self, controller) -> None:
 
         master = Tk()
-        master.title('SSAVE - Sleep Cycle Visualization Tool')
+        master.title('SSAVE - Sleep Period Visualization Tool')
 
         super().__init__(master, 900, 1000)
 
@@ -730,17 +730,17 @@ class MainDialog(Dialog):
         self.output_plot.bind("<Configure>", lambda event: self.showPlot(self.output_plot))
         self.output_sc_st = ttk.Treeview(self.tab_control, selectmode='browse', style="mystyle.Treeview")
 
-        self.output_sc_st['columns']= ('EPOCH', 'SLEEP CYCLE INDEX','SLEEP CYCLE', 'SLEEP STAGE')
+        self.output_sc_st['columns']= ('EPOCH', 'SLEEP PERIOD INDEX','SLEEP PERIOD', 'SLEEP STAGE')
         self.output_sc_st.column("#0", width=0,  stretch=tk.NO)
         self.output_sc_st.column("EPOCH", anchor=tk.CENTER, width=80)
-        self.output_sc_st.column("SLEEP CYCLE INDEX", anchor=tk.CENTER, width=80)
-        self.output_sc_st.column("SLEEP CYCLE", anchor=tk.CENTER, width=80)
+        self.output_sc_st.column("SLEEP PERIOD INDEX", anchor=tk.CENTER, width=80)
+        self.output_sc_st.column("SLEEP PERIOD", anchor=tk.CENTER, width=80)
         self.output_sc_st.column("SLEEP STAGE", anchor=tk.CENTER, width=80)
 
         self.output_sc_st.heading("#0", text="", anchor=tk.CENTER)
         self.output_sc_st.heading("EPOCH", text="EPOCH",anchor=tk.CENTER)
-        self.output_sc_st.heading("SLEEP CYCLE INDEX", text="SLEEP CYCLE INDEX", anchor=tk.CENTER)
-        self.output_sc_st.heading("SLEEP CYCLE", text="SLEEP CYCLE", anchor=tk.CENTER)
+        self.output_sc_st.heading("SLEEP PERIOD INDEX", text="SLEEP PERIOD INDEX", anchor=tk.CENTER)
+        self.output_sc_st.heading("SLEEP PERIOD", text="SLEEP PERIOD", anchor=tk.CENTER)
         self.output_sc_st.heading("SLEEP STAGE", text="SLEEP STAGE", anchor=tk.CENTER)
 
         self.output_sc_st.tag_configure('odd', background='#E8E8E8')
@@ -764,7 +764,7 @@ class MainDialog(Dialog):
             self.ct_options.pack(fill=tk.BOTH, expand=1)
             #self.ct_options.pack_propagate(0)
 
-            tk.Label(self.ct_options, text="We have found cut options for long NREM cycle. Please select the options you like and click 'Execute'.", anchor='e').pack()
+            tk.Label(self.ct_options, text="We have found cut options for long NREM period. Please select the options you like and click 'Execute'.", anchor='e').pack()
 
             cut_table_container = tk.Frame(self.ct_options, height=100, borderwidth=1, relief='solid')
             cut_table_container.pack(fill=tk.X, pady=10)
@@ -775,16 +775,16 @@ class MainDialog(Dialog):
             self.cut_table.tag_configure('odd', background='#E8E8E8')
             self.cut_table.tag_configure('even', background='#DFDFDF')
 
-            self.cut_table['columns']= ('NREMP EPOCH RANGE', 'SLEEP CYCLE INDEX','CUT POINT EPOCH', 'SELECT')
+            self.cut_table['columns']= ('NREMP EPOCH RANGE', 'SLEEP PERIOD INDEX','CUT POINT EPOCH', 'SELECT')
             self.cut_table.column("#0", width=0,  stretch=tk.NO)
             self.cut_table.column("NREMP EPOCH RANGE", anchor=tk.CENTER, width=80)
-            self.cut_table.column("SLEEP CYCLE INDEX", anchor=tk.CENTER, width=80)
+            self.cut_table.column("SLEEP PERIOD INDEX", anchor=tk.CENTER, width=80)
             self.cut_table.column("CUT POINT EPOCH", anchor=tk.CENTER, width=80)
             self.cut_table.column("SELECT", anchor=tk.CENTER, width=80)
 
             self.cut_table.heading("#0", text="", anchor=tk.CENTER)
             self.cut_table.heading("NREMP EPOCH RANGE", text="NREMP EPOCH RANGE",anchor=tk.CENTER)
-            self.cut_table.heading("SLEEP CYCLE INDEX", text="SLEEP CYCLE INDEX", anchor=tk.CENTER)
+            self.cut_table.heading("SLEEP PERIOD INDEX", text="SLEEP PERIOD INDEX", anchor=tk.CENTER)
             self.cut_table.heading("CUT POINT EPOCH", text="CUT POINT EPOCH", anchor=tk.CENTER)
             self.cut_table.heading("SELECT", text="SELECT", anchor=tk.CENTER)
 
@@ -794,7 +794,7 @@ class MainDialog(Dialog):
 
         self.tab_control.add(self.output_plot, text='Visualization')
         if cut_options_found: self.tab_control.add(self.ct_options, text='NREM Cut Options')
-        self.tab_control.add(self.output_sc_st, text='Sleep Cycles and Stages')
+        self.tab_control.add(self.output_sc_st, text='Sleep Periods and Stages')
 
     # --------------------------------------------------------------------------
     def browseInputFile(self):

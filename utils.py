@@ -325,3 +325,13 @@ def getTTest(a, b, axis=0, alternative='two-sided', type='ind'):
         return sp.stats.ttest_rel(a, b, axis=axis, alternative=alternative).pvalue
     else:
         pdb.set_trace()
+
+# --------------------------------------------------------------------------
+def getGroupWiseCounts(arr):
+    group, count = [], 0
+    for i in range(len(arr)):
+        count += 1
+        if i+1 == len(arr) or arr[i] != arr[i+1]:
+            group.append((arr[i], count))
+            count = 0
+    return group
