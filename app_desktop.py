@@ -123,27 +123,6 @@ def wrap_rows(tree, parent, index, iid, values, tags):
 
     return iid
 
-'''
-root = tk.Tk()
-tree = CbTreeview(root, columns=("Table No.", "Order", "Time", "Served"),
-                  height=400, selectmode="extended")
-
-tree.heading('Table No.', text="Table No.", anchor='w')
-tree.heading('Order', text="Order", anchor='w')
-tree.heading('Time', text="Time", anchor='w')
-tree.heading('Served', text="Served", anchor='w')
-tree.column('#1', stretch='no', minwidth=0, width=100)
-tree.column('#2', stretch='no', minwidth=0, width=600)
-tree.column('#3', stretch='no', minwidth=0, width=100)
-tree.column('#4', stretch='no', minwidth=0, width=70)
-
-tree.pack(fill='both')
-
-for i in range(5):
-    tree.insert('', 'end', values=(i, i, i))
-root.mainloop()
-'''
-
 # --------------------------------------------------------------------------
 class TextRedirector(object):
 

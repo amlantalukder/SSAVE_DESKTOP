@@ -144,8 +144,6 @@ class DesktopUIController(Controller):
         scv.Config.CHANNELS_SELECTED = channels_selected
         scv.Config.EPOCH_SIZE = epoch_size
 
-        #print(scv.Config.sleep_stage_event_to_id_mapping)
-
         self.state_changed = True
 
         return (True, "Saved Settings")

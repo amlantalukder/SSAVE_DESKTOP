@@ -258,7 +258,7 @@ class SleepInfo:
             fmin=fmin, fmax=fmax, adaptive=False, low_bias=True, n_jobs=1, verbose='ERROR', bandwidth=bw, normalization='full')
         self.spectogram = self.spectogram.transpose(0,2,1)
 
-        if self.enable_cache: np.savez(spectogram_path, spec = self.spectogram, spec_freq = self.spec_freq)
+        if self.enable_cache or True: np.savez(spectogram_path, spec = self.spectogram, spec_freq = self.spec_freq)
 
     # --------------------------------------------------------------------------
     def durationInEpoch(self, duration_in_minute):
@@ -639,7 +639,6 @@ class SleepInfo:
             self.extractSleepPeriods()
 
         fig_path = f'{self.folder_cache}/{self.sample_name}.jpg'
-        #fig_path = f'{Config.FOLDER_PROCESSED_DATA}/temp2/{self.sample_name}.jpg'
 
         self.generatePlot(Config.SLEEP_STAGE_ANNOTS_ALL, sleep_stage_colors=sleep_stage_colors, title=self.sample_name, fig_path=fig_path)
 
