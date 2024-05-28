@@ -6,7 +6,7 @@ Author: Amlan Talukder
 Date: June 23, 2022
 
 SSAVE is a software used to detect and visualize sleep cycles with spectrogram from EEG data. 
-It is developed as part of a project of Dr. Leping Li's lab of BCBB branch NIH/NIEHS.
+It was developed as part of a project of Dr. Leping Li's lab of BCBB branch NIH/NIEHS.
 
 INSTALLATION
 --------------------------------------------------------------------------------------------
