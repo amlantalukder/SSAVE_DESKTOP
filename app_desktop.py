@@ -1,7 +1,6 @@
 import os, sys, re
 import tkinter as tk
 from tkinter import BOTH, Tk, ttk, font, filedialog, scrolledtext, messagebox
-import pdb
 
 from utils import readFileInTable
 from PIL import ImageTk, Image
@@ -829,7 +828,7 @@ class MainDialog(Dialog):
         if os.path.exists(self.img_path): 
             img = Image.open(self.img_path)
             w, h = ele.winfo_width(), ele.winfo_height()
-            img.thumbnail((w, h), Image.ANTIALIAS)
+            img.thumbnail((w, h), Image.LANCZOS)
             img = ImageTk.PhotoImage(img)
             ele.create_image(w//2, h//2, image = img, anchor = tk.CENTER)
             ele.image = img
@@ -899,11 +898,14 @@ class CLIInterface():
 
         self.controller.loadSleepData()
         self.controller.execute()
-        
-# --------------------------------------------------------------------------
-if __name__ == "__main__":
 
+# --------------------------------------------------------------------------
+def main():
     try:
         app = MainDialog(DesktopUIController())
     except tk.TclError as error:
         if 'no display' in error.args[0]: app = CLIInterface(CLIController())
+        
+# --------------------------------------------------------------------------
+if __name__ == "__main__":
+    main()

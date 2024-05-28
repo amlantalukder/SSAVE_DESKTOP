@@ -1,5 +1,5 @@
 import numpy as np
-import mne, os, pdb
+import mne, os
 from scipy.signal import detrend
 from matplotlib.patches import Rectangle
 from utils import Config, plt, createDir, readFileInTable, writeDataTableAsText, getGroupWiseCounts
@@ -265,7 +265,7 @@ class SleepInfo:
         try:
             return duration_in_minute * (60/self.epoch_size)
         except:
-            pdb.set_trace()
+            raise Exception("Error while setting epoch duration")
 
     # --------------------------------------------------------------------------
     # Find cut options of long NREMP periods

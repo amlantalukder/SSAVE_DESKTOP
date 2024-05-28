@@ -10,11 +10,11 @@ It is developed as part of a project of Dr. Leping Li's lab of BCBB branch NIH/N
 
 INSTALLATION
 --------------------------------------------------------------------------------------------
-   1. Install python 3.6 or higher
-   2. Install the following python packages:
-        * numpy
-        * matplotlib
-        * mne
+   1. Install python 3.7 or higher
+   2. Install required python packages:
+        ```
+        pip install -r requirements.txt
+        ```
 
 EXECUTION
 --------------------------------------------------------------------------------------------------------------------------------------
